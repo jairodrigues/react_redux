@@ -1,7 +1,12 @@
 'use strict';
 
 exports.__esModule = true;
-exports.default = createRouterHistory;
+
+exports.default = function (createHistory) {
+  var history = void 0;
+  if (canUseDOM) history = (0, _useRouterHistory2.default)(createHistory)();
+  return history;
+};
 
 var _useRouterHistory = require('./useRouterHistory');
 
@@ -11,9 +16,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
-function createRouterHistory(createHistory) {
-  var history = void 0;
-  if (canUseDOM) history = (0, _useRouterHistory2.default)(createHistory)();
-  return history;
-}
 module.exports = exports['default'];

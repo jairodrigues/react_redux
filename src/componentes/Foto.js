@@ -67,7 +67,7 @@ class FotoInfo extends Component{
         {
           foto.comentarios.map(comentario => {
             return (
-              <li className="comentario" key={comentario.id}>
+              <li className="comentario" key={comentario.id+comentario.login}>
                 <Link to={`/timeline/${comentario.login} `} className="foto-info-autor">{comentario.login} </Link>
                 {comentario.texto}
               </li>

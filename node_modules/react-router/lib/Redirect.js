@@ -2,11 +2,9 @@
 
 exports.__esModule = true;
 
-var _createReactClass = require('create-react-class');
+var _react = require('react');
 
-var _createReactClass2 = _interopRequireDefault(_createReactClass);
-
-var _propTypes = require('prop-types');
+var _react2 = _interopRequireDefault(_react);
 
 var _invariant = require('invariant');
 
@@ -20,6 +18,10 @@ var _InternalPropTypes = require('./InternalPropTypes');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _React$PropTypes = _react2.default.PropTypes,
+    string = _React$PropTypes.string,
+    object = _React$PropTypes.object;
+
 /**
  * A <Redirect> is used to declare another URL path a client should
  * be sent to when they request a given URL.
@@ -28,8 +30,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * and are traversed in the same manner.
  */
 /* eslint-disable react/require-render-return */
-var Redirect = (0, _createReactClass2.default)({
+
+var Redirect = _react2.default.createClass({
   displayName: 'Redirect',
+
 
   statics: {
     createRouteFromReactElement: function createRouteFromReactElement(element) {
@@ -80,11 +84,11 @@ var Redirect = (0, _createReactClass2.default)({
   },
 
   propTypes: {
-    path: _propTypes.string,
-    from: _propTypes.string, // Alias for path
-    to: _propTypes.string.isRequired,
-    query: _propTypes.object,
-    state: _propTypes.object,
+    path: string,
+    from: string, // Alias for path
+    to: string.isRequired,
+    query: object,
+    state: object,
     onEnter: _InternalPropTypes.falsy,
     children: _InternalPropTypes.falsy
   },

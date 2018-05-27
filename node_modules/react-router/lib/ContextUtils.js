@@ -4,20 +4,16 @@ exports.__esModule = true;
 exports.ContextProvider = ContextProvider;
 exports.ContextSubscriber = ContextSubscriber;
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _react = require('react');
 
 // Works around issues with context updates failing to propagate.
 // Caveat: the context value is expected to never change its identity.
 // https://github.com/facebook/react/issues/2517
 // https://github.com/reactjs/react-router/issues/470
 
-var contextProviderShape = _propTypes2.default.shape({
-  subscribe: _propTypes2.default.func.isRequired,
-  eventIndex: _propTypes2.default.number.isRequired
+var contextProviderShape = _react.PropTypes.shape({
+  subscribe: _react.PropTypes.func.isRequired,
+  eventIndex: _react.PropTypes.number.isRequired
 });
 
 function makeContextName(name) {

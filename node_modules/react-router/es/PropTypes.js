@@ -1,4 +1,10 @@
-import { func, object, shape, string } from 'prop-types';
+import { PropTypes } from 'react';
+
+var func = PropTypes.func,
+    object = PropTypes.object,
+    shape = PropTypes.shape,
+    string = PropTypes.string;
+
 
 export var routerShape = shape({
   push: func.isRequired,

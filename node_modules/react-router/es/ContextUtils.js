@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import { PropTypes } from 'react';
 
 // Works around issues with context updates failing to propagate.
 // Caveat: the context value is expected to never change its identity.

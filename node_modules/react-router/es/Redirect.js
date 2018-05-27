@@ -1,9 +1,12 @@
-import createReactClass from 'create-react-class';
-import { string, object } from 'prop-types';
+import React from 'react';
 import invariant from 'invariant';
 import { createRouteFromReactElement as _createRouteFromReactElement } from './RouteUtils';
 import { formatPattern } from './PatternUtils';
 import { falsy } from './InternalPropTypes';
+
+var _React$PropTypes = React.PropTypes,
+    string = _React$PropTypes.string,
+    object = _React$PropTypes.object;
 
 /**
  * A <Redirect> is used to declare another URL path a client should
@@ -13,8 +16,10 @@ import { falsy } from './InternalPropTypes';
  * and are traversed in the same manner.
  */
 /* eslint-disable react/require-render-return */
-var Redirect = createReactClass({
+
+var Redirect = React.createClass({
   displayName: 'Redirect',
+
 
   statics: {
     createRouteFromReactElement: function createRouteFromReactElement(element) {

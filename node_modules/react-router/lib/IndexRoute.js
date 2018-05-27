@@ -2,11 +2,9 @@
 
 exports.__esModule = true;
 
-var _createReactClass = require('create-react-class');
+var _react = require('react');
 
-var _createReactClass2 = _interopRequireDefault(_createReactClass);
-
-var _propTypes = require('prop-types');
+var _react2 = _interopRequireDefault(_react);
 
 var _routerWarning = require('./routerWarning');
 
@@ -22,13 +20,17 @@ var _InternalPropTypes = require('./InternalPropTypes');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var func = _react2.default.PropTypes.func;
+
 /**
  * An <IndexRoute> is used to specify its parent's <Route indexRoute> in
  * a JSX route config.
  */
 /* eslint-disable react/require-render-return */
-var IndexRoute = (0, _createReactClass2.default)({
+
+var IndexRoute = _react2.default.createClass({
   displayName: 'IndexRoute',
+
 
   statics: {
     createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {
@@ -45,8 +47,8 @@ var IndexRoute = (0, _createReactClass2.default)({
     path: _InternalPropTypes.falsy,
     component: _InternalPropTypes.component,
     components: _InternalPropTypes.components,
-    getComponent: _propTypes.func,
-    getComponents: _propTypes.func
+    getComponent: func,
+    getComponents: func
   },
 
   /* istanbul ignore next: sanity check */

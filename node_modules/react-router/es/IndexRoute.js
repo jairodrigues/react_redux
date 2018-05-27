@@ -1,17 +1,20 @@
-import createReactClass from 'create-react-class';
-import { func } from 'prop-types';
+import React from 'react';
 import warning from './routerWarning';
 import invariant from 'invariant';
 import { createRouteFromReactElement as _createRouteFromReactElement } from './RouteUtils';
 import { component, components, falsy } from './InternalPropTypes';
+
+var func = React.PropTypes.func;
 
 /**
  * An <IndexRoute> is used to specify its parent's <Route indexRoute> in
  * a JSX route config.
  */
 /* eslint-disable react/require-render-return */
-var IndexRoute = createReactClass({
+
+var IndexRoute = React.createClass({
   displayName: 'IndexRoute',
+
 
   statics: {
     createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {

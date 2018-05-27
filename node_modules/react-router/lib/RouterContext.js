@@ -14,12 +14,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _createReactClass = require('create-react-class');
-
-var _createReactClass2 = _interopRequireDefault(_createReactClass);
-
-var _propTypes = require('prop-types');
-
 var _getRouteParams = require('./getRouteParams');
 
 var _getRouteParams2 = _interopRequireDefault(_getRouteParams);
@@ -30,22 +24,29 @@ var _RouteUtils = require('./RouteUtils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _React$PropTypes = _react2.default.PropTypes,
+    array = _React$PropTypes.array,
+    func = _React$PropTypes.func,
+    object = _React$PropTypes.object;
+
 /**
  * A <RouterContext> renders the component tree for a given router state
  * and sets the history object and the current location in context.
  */
-var RouterContext = (0, _createReactClass2.default)({
+
+var RouterContext = _react2.default.createClass({
   displayName: 'RouterContext',
+
 
   mixins: [(0, _ContextUtils.ContextProvider)('router')],
 
   propTypes: {
-    router: _propTypes.object.isRequired,
-    location: _propTypes.object.isRequired,
-    routes: _propTypes.array.isRequired,
-    params: _propTypes.object.isRequired,
-    components: _propTypes.array.isRequired,
-    createElement: _propTypes.func.isRequired
+    router: object.isRequired,
+    location: object.isRequired,
+    routes: array.isRequired,
+    params: object.isRequired,
+    components: array.isRequired,
+    createElement: func.isRequired
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -56,7 +57,7 @@ var RouterContext = (0, _createReactClass2.default)({
 
 
   childContextTypes: {
-    router: _propTypes.object.isRequired
+    router: object.isRequired
   },
 
   getChildContext: function getChildContext() {
